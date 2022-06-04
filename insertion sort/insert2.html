@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort Algo</title>
+</head>
+<body>
+    <h2>Insertion Sort Algorithm</h2>
+</body>
+<script>
+function insertion(a, n)
+{
+	let i, key, j;
+	for (i = 1; i < n; i++)
+	{
+		key = a[i];
+		j = i - 1;
+        while (j >= 0 && a[j] > key)
+		{
+			a[j + 1] = a[j];
+			j = j - 1;
+		}
+		a[j + 1] = key;
+	}
+}
+function print(a, n)
+{
+	let i;
+	for (i = 0; i < n; i++)
+		document.write(a[i] + " ");
+	document.write("<br>");
+}
+
+	let a = [11, 23, 8, 56, 18 ];
+	let n = a.length;
+
+	insertion(a, n);
+	print(a, n);
+</script>
+</html>
