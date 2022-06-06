@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2> quicksort algorithm </h2>
+</body>
+<script>
+function QuickSort(a){
+  if(a.length <= 1){
+    return a;
+  }
+
+  const w = a[a.length - 1];
+  const lefa = [];
+  const riga= [];
+
+  for(let i=0; i < a.length-1;i++){
+    if(a[i] < w){
+      lefa.push(a[i]);
+    }
+    else{
+      riga.push(a[i])
+    }
+  }
+
+  return [...QuickSort(lefa) ,w,...QuickSort(riga)];
+
+}
+
+const items = [10,52,12,22,9,54,32,88,65,5];
+console.log(QuickSort(items));
+</script>
+</html>
