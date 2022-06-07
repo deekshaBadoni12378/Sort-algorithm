@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heap Sort Algo</title>
+</head>
+<body>
+    <h2>counting sort  Algorithm </h2>
+</body>
+<script>
+  
+  function heap(x, i) {
+    var l = 2 * i + 1;
+    var r = 2 * i + 2;
+    var max = i;
+    
+    if (l < length && x[l] > x[max]) {
+        max = l;
+    }
+
+    if (r < length&& x[r] > x[max])     {
+        max = r;
+    }
+
+    if (max != i) {
+        swap(x, i, max);
+        heap(x, max);
+    }
+}
+
+function swap(x, A, B) {
+    var temp = x[A];
+
+    x[A] = x[B];
+    x[B] = temp;
+}
+
+function heapSort(x) {
+    
+    length = x.length;
+
+    for (var i = Math.floor(length / 2); i >= 0; i -= 1)      {
+        heap(x, i);
+      }
+
+    for (i = x.length - 1; i > 0; i--) {
+        swap(x, 0, i);
+        length--;
+      
+      
+        heap(x, 0);
+    }
+}
+
+var array = [2, 5, 7, 9, 8, 4, 6];
+heapSort(array);
+console.log("sorted array: "+array);
+
+</script>
+</html>
