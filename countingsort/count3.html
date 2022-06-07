@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+</head>
+<body>
+    <h2>counting sort  Algorithm </h2>
+</body>
+<script>
+function counting(a, min, max)
+  {
+    var i, z = 0, count = [];
+ 
+    for (i = min; i <= max; i++) {
+        count[i] = 0;
+    }
+ 
+    for (i=0; i < a.length; i++) {
+        count[a[i]]++;
+    }
+ 
+    for (i = min; i <= max; i++) {
+        while (count[i]-- > 0) {
+            a[z++] = i;
+        }
+    }
+ return a;
+}
+var arr = [8, 10, 2, 18, 5, 11]; 
+console.log("Sorted Array Elements"); 
+console.log(counting(arr, 0, 20));
+</script>
+</html>
